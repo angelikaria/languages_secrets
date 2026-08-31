@@ -228,6 +228,7 @@
   }
   .pay-block-text h3{color:#fff; font-size:20px; margin-bottom:6px;}
   .pay-block-text p{color:#CBBEE6; font-size:14px; max-width:420px;}
+  .pay-buttons{display:flex; gap:14px; flex-wrap:wrap;}
   .pay-btn{
     background:#1FADC3;
     background:linear-gradient(120deg,#1FADC3,#3AC569);
@@ -351,7 +352,7 @@
     <div class="hero-card">
       <div class="tag">Прайс-лист · коротко</div>
       <ul>
-        <li>Курс з граматики (НМТ) <span class="price">від 200 грн/урок</span></li>
+        <li>Курс з граматики (НМТ) <span class="price">250 грн/урок</span></li>
         <li>Індивідуальний урок <span class="price">350 грн/урок</span></li>
         <li>Спікінг-клуб у Telegram <span class="price">1500 грн/міс</span></li>
         <li>Пакет «На макс» <span class="price">2500 грн/міс</span></li>
@@ -389,7 +390,7 @@
             <div class="card-num">01 · Групи · <span class="online-tag">онлайн</span></div>
             <h3>Курс з граматики для НМТ</h3>
             <p style="color:var(--ink-soft); font-size:14px;">26 уроків, 3 місяці. Учні 10–11 класів.</p>
-            <div class="price">від 200 грн<small>за урок, залежно від групи</small></div>
+            <div class="price">250 грн<small>за урок</small></div>
           </div>
           <div class="card-face card-back">
             <div>
@@ -479,14 +480,14 @@
         <tr>
           <td>Група 1</td>
           <td>до 4 осіб</td>
-          <td>середа 16:30 · субота 11:00</td>
+          <td>вівторок 18:00 · субота 11:00</td>
           <td class="price">250 грн / урок</td>
         </tr>
         <tr>
           <td>Група 2</td>
-          <td>до 6 осіб</td>
+          <td>до 4 осіб</td>
           <td>середа 18:00 · субота 12:30</td>
-          <td class="price">200 грн / урок</td>
+          <td class="price">250 грн / урок</td>
         </tr>
       </tbody>
     </table>
@@ -496,25 +497,27 @@
       <div class="pay-block-text">
         <div class="eyebrow" style="margin-bottom:8px;">Онлайн-оплата</div>
         <h3>Сплатити курс з граматики (НМТ)</h3>
-        <p>Оплата приймається через LiqPay — картками Visa/Mastercard українських і закордонних банків.</p>
+        <p>Натисніть кнопку своєї групи — відкриється Telegram із заготовленим повідомленням, залишиться тільки натиснути «Надіслати». Далі надішлю реквізити для оплати через LiqPay (картка, 5100 грн зі знижкою за весь курс — 3 місяці).</p>
       </div>
 
       <!--
         ============================================================
-        МІСЦЕ ДЛЯ КНОПКИ LIQPAY
+        КНОПКИ ЗАПИСУ В TELEGRAM (з готовим текстом повідомлення)
         ============================================================
-        1. Зайдіть у кабінет LiqPay → «Кнопка оплати» (https://www.liqpay.ua/uk/pos/button)
-        2. Вкажіть суму (наприклад, 250 грн за урок або 200 грн, залежно від групи)
-           і призначення платежу: "Оплата курсу з граматики для НМТ".
-        3. Згенеруйте код кнопки — LiqPay видасть готовий <form> або
-           <script>+<div> (LiqPayCheckoutWidget).
-        4. Вставте отриманий код ЗАМІСТЬ блоку <a class="btn pay-btn" ...> нижче
-           (або всередину div#liqpay-nmt-button, якщо це скрипт-віджет).
+        Кнопки нижче ведуть у Telegram-чат з Анжелікою і одразу
+        підставляють текст повідомлення (людині залишається тільки
+        натиснути «Надіслати»). Якщо потім захочете підключити оплату
+        напряму через LiqPay замість переходу в Telegram — згенеруйте
+        кнопку в кабінеті LiqPay (https://www.liqpay.ua/uk/pos/button,
+        сума 5100 грн) і замініть href на код LiqPay-кнопки.
         ============================================================
       -->
-      <div id="liqpay-nmt-button">
-        <a class="btn pay-btn" href="#" onclick="alert('Кнопку LiqPay ще не підключено. Замініть цей блок кодом, згенерованим у кабінеті LiqPay.'); return false;">
-          💳 Сплатити курс через LiqPay
+      <div class="pay-buttons">
+        <a class="btn pay-btn" href="https://t.me/angelikaRvych?text=%D0%92%D1%96%D1%82%D0%B0%D1%8E%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%B8%D1%82%D0%B8%20%D0%BA%D1%83%D1%80%D1%81%20%D0%9D%D0%9C%D0%A2%20%E2%80%94%20%D0%93%D1%80%D1%83%D0%BF%D0%B0%201%20%28%D0%92%D1%82%2018%3A00%20/%20%D0%A1%D0%B1%2011%3A00%29%2C%205100%20%D0%B3%D1%80%D0%BD%20%D0%B7%D0%B0%203%20%D0%BC%D1%96%D1%81%D1%8F%D1%86%D1%96." target="_blank" rel="noopener">
+          💬 Група 1 (Вт · Сб) — 5100 грн
+        </a>
+        <a class="btn pay-btn" href="https://t.me/angelikaRvych?text=%D0%92%D1%96%D1%82%D0%B0%D1%8E%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%B8%D1%82%D0%B8%20%D0%BA%D1%83%D1%80%D1%81%20%D0%9D%D0%9C%D0%A2%20%E2%80%94%20%D0%93%D1%80%D1%83%D0%BF%D0%B0%202%20%28%D0%A1%D1%80%2018%3A00%20/%20%D0%A1%D0%B1%2012%3A30%29%2C%205100%20%D0%B3%D1%80%D0%BD%20%D0%B7%D0%B0%203%20%D0%BC%D1%96%D1%81%D1%8F%D1%86%D1%96." target="_blank" rel="noopener">
+          💬 Група 2 (Ср · Сб) — 5100 грн
         </a>
       </div>
     </div>
